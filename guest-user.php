@@ -59,11 +59,22 @@ if(isset($_POST["registrar"])){
         $contrasena = $_POST['password'];
         $fecha = date("Y-m-d");
 
+        //Obtiene imagen
+        //Sacamos canal ID
+        $division = explode("/", $link);
+
+        $canalID = $division[4];
+
+$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key=AIzaSyDOuJvEC62tWQX7T5jtCx4Tqr8ZVvCqC-Y');
+$resultado = json_decode($api, true);
+$imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
+
+
         //Convertir valores
         $correo = strtolower ( $correo ); //AUTOMATICAMENTE MINUSCULAS
 
             //Datos que enviara a la BBDD
-           $sql = "INSERT INTO usuarios (USUARIO, CORREO, CONTRASENA, LINK, VIDEO, FECHA)  VALUES('$usuario', '$correo', '$contrasena', '$link', '$video', '$fecha')";
+           $sql = "INSERT INTO usuarios (USUARIO, CORREO, CONTRASENA, LINK, FOTO, VIDEO, FECHA)  VALUES('$usuario', '$correo', '$contrasena', '$link', '$imagen', '$video', '$fecha')";
 
             //Introducir datos en BBDD
            $result= $conexion -> query($sql);

@@ -1,4 +1,7 @@
 <?php
+  session_start();
+?>
+<?php
 include 'conexion.php';
 
     if ($_GET['canal'] != null){
@@ -6,9 +9,9 @@ include 'conexion.php';
         $linkID = $_GET['canal'];
 
         //Consultar si el canal destino esta en la BBDD
-            $consultaP = "SELECT * FROM usuarios WHERE LINK='$linkID";
-            $consulta = $conexion->query($consultaP);  //Ejecuta la consultaN
-             if ($resultado = $conexion -> query($consulta)){
+            $linkBBDD = "https://www.youtube.com/channel/".$linkID;
+            $consultaP = "SELECT * FROM usuarios WHERE LINK='$linkBBDD'";
+            if ($resultado = $conexion -> query($consultaP)){
                 //Determinamos numero tablas
                 $num = $resultado -> num_rows;
             }
@@ -16,9 +19,8 @@ include 'conexion.php';
             if ($num > 0){
                 //Canal existe
                 $sesion = $_SESSION['usuario'];
-                $consultaP = "SELECT * FROM subscripcion WHERE USER-SUB='$sesion";
-                $consulta = $conexion->query($consultaP);  //Ejecuta la consultaN
-                if ($resultado = $conexion -> query($consulta)){
+                $consultaP = "SELECT * FROM subscripcion WHERE `USER-SUB`='$sesion'  AND `USER-USER` ='$linkID'";
+                if ($resultado = $conexion -> query($consultaP)){
                     //Determinamos numero tablas
                     $num = $resultado -> num_rows;
                 }
@@ -34,7 +36,7 @@ include 'conexion.php';
                      //Introducir datos en BBDD
                         $result= $conexion -> query($nuevo);
                         if (!$result){
-                            echo 'No se te ha podido suscribir en el sistema';
+                            echo 'No se te ha podido suscribir en el sistema<br>'.$nuevo;
                         }   else    {
                             //Todo OK
                             $link = "http://www.youtube.com/subscription_center?add_user=".$linkID;
@@ -44,11 +46,12 @@ include 'conexion.php';
 
             }   else {
                 //Canal no existe
-                $mensaje = "El canal al que intentas suscribirte, no esta registrado en la web";
+                $mensaje = "El canal al que intentas suscribirte, no esta registrado en la web -- ".$consultaP.$num;
             }
     }   else    {
         //No ha mandado ningun canal
         $mensaje = "No se ha recibido el canal al que te vas a suscribir";
     }
 
+echo $mensaje;
 ?>
