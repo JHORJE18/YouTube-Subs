@@ -14,6 +14,13 @@
         //Determinamos numero tablas
          $subs = $resultado -> num_rows;
     }
+
+    //Consultamos numero de filas (N Visitas)
+    $campos = "SELECT * FROM views";
+    if ($resultado = $conexion -> query($campos)){
+        //Determinamos numero tablas
+         $views = $resultado -> num_rows;
+    }
 ?>
 
 <div>
@@ -27,7 +34,15 @@
     </li>
     <li class="mdl-list__item">
         <span class="mdl-list__item-primary-content">
-            <span>subscripciones:</span>
+            <span>Visitas:</span>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+            <strong><?php echo $views ?></strong>
+        </span>
+    </li>
+    <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+            <span>Suscripciones conseguidas:</span>
         </span>
         <span class="mdl-list__item-secondary-content">
             <strong><?php echo $subs ?></strong>

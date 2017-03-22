@@ -3,6 +3,18 @@
   <head>
     <?php include './plantilla/cabezera.php';
           include 'conexion.php';
+
+          //Añadimos nueva visita por ver esto
+            $momento = date("Y-m-d/H:i:s");
+            $visita = "INSERT INTO views (MOMENTO)  VALUES('$momento')";
+
+                    //Introducir datos en BBDD
+                  $result= $conexion -> query($visita);
+
+            if (!$result){
+                echo 'Tu visita no se puede registrar <br> '.$visita;
+            }
+
     $seccion = "Inicio" ?>
 
     <title>YT Subs | <?php echo $seccion; ?></title>
@@ -17,8 +29,8 @@
 
         <div class="mdl-grid demo-content">
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people_outline</i>Subscriptores</div></a>
-            <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people</i>Suscribirse</div></a>
+            <a href="suscriptores.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people_outline</i>Subscriptores</div></a>
+            <a href="suscribirse.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people</i>Suscribirse</div></a>
             <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Videos de Subscriptores</div></a>
           </div>
 
