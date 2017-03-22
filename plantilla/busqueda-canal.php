@@ -1,8 +1,8 @@
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" >
             <thead>
                 <tr>
                     <th class="mdl-data-table__cell--non-numeric">Canal</th>
-                    <th>Suscripciones</th>
+                    <th>Suscrito</th>
                     <th>+ Subscriptores</th>
                     <th>Subscriptores YT</th>
                     <th class="mdl-data-table__cell--non-numeric">Video</th>
@@ -29,13 +29,27 @@
               $video = $fila[6];
               $link = $fila[4];
 
+              //Visualizar estadisticas de suscripciones conseguidas
+            $consultaSUBS = "SELECT * FROM subscripcion WHERE `USER-USER`= '$canalID'";
+                if ($resultado = $conexion -> query($consultaSUBS)){
+                //Determinamos numero tablas
+                 $subsWEB = $resultado -> num_rows;
+                }
+
+            //Visualizar estadisticas de canales a los que se ha suscrito
+            $consultaCOL = "SELECT * FROM subscripcion WHERE `USER-SUB`= '$usuario'";
+                if ($resultado = $conexion -> query($consultaCOL)){
+                //Determinamos numero tablas
+                 $suscrito = $resultado -> num_rows;
+                }
+
               //Cada vuelta pon la fila
               ?>
 <tr>
     <td class="mdl-data-table__cell--non-numeric">
         <a href="perfil.php?user=<?php echo $usuario ?>" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><?php echo $usuario ?></div></a>
     </td>    
-    <td><?php echo $suscripciones ?></td>
+    <td><?php echo $suscrito ?></td>
     <td><?php echo $subsWEB ?></td>
     <td><?php echo $subs ?></td>
     <td class="mdl-data-table__cell--non-numeric">
