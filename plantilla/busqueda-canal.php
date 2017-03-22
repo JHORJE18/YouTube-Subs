@@ -22,8 +22,9 @@
               //Variables
               $usuario = $fila[1];
               $suscripciones = 18;
-              $subs = 10;
-              $subsYT = 210;
+              $subsWEB = 10;
+              $canalID = "UC57XOrOWOWW4XN-W22s5UrQ";
+              include './usuarios/obten-subsYT.php';
               $ya = false;
               $video = $fila[6];
               $link = $fila[4];
@@ -35,8 +36,8 @@
         <a href="perfil.php?user=<?php echo $usuario ?>" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><?php echo $usuario ?></div></a>
     </td>    
     <td><?php echo $suscripciones ?></td>
+    <td><?php echo $subsWEB ?></td>
     <td><?php echo $subs ?></td>
-    <td><?php echo $subsYT ?></td>
     <td class="mdl-data-table__cell--non-numeric">
         <a href="<?php echo $video ?>" target="_blank"><div class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Video</div></a>
     </td>

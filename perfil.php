@@ -54,7 +54,6 @@
             <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people_outline</i>Subscriptores</div></a>
             <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people</i>Suscribirse</div></a>
             <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Videos de Subscriptores</div></a>
-            <a href="perfil.php?edit=1"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">build</i>Editar Perfil</div></a>
           </div>
 
           <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
@@ -77,8 +76,8 @@
               <span>Fecha registro: <?php echo $perfilUser[7] ?></span><br>
 
               <hr>
-            <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-            <a href="<?php echo $perfilUser[7] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
+                <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
+                <a href="<?php echo $perfilUser[7] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
 
          <?php   }
 
@@ -98,8 +97,8 @@
                 <h2 class="mdl-card__title-text">@<?php echo $usuarioVER ?></h2>
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a href="contruccion.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Añadir Amigo</a>
-                <a href="contruccion.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Eliminar Amigo</a>
+                  <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
+                  <a href="<?php echo $perfilUser[7] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
               </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
