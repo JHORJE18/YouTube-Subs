@@ -12,5 +12,5 @@ $resultado = json_decode($api, true);
 $subs = intval($resultado['items'][0]['statistics']['subscriberCount']);
 $visitas = intval($resultado['items'][0]['statistics']['viewCount']);
 $videos = intval($resultado['items'][0]['statistics']['videoCount']);
-;
+
 ?>

@@ -45,7 +45,7 @@
         <?php
         //Variable $ya, sera true si esta suscrito / false si no lo esta
             if ($ya){
-                echo '<a href="'.$link.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><i class="material-icons">check</i> Suscrito</div></a>';
+                echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><i class="material-icons">check</i> Suscrito</div></a>';
             }   else  {
                 echo '<a href="'.$link.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Suscribirse</div></a>';
             }
