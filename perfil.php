@@ -26,8 +26,8 @@
 
                 $perfilUser = $resultado->fetch_array();
               
-              if ($perfilUser[6] == null){
-                $perfilUser[6] = "imagenes/user.jpg";
+              if ($perfilUser[5] == null){
+                $perfilUser[5] = "imagenes/user.jpg";
               }
 
 
@@ -89,7 +89,7 @@
 
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="mdl-shadow--4dp mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
-              <img src="<?php echo $perfilUser[6] ?>" style="width: 100%">
+              <img src="<?php echo $perfilUser[5] ?>" style="width: 100%">
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
             <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
