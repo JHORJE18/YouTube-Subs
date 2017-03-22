@@ -4,9 +4,18 @@
     <?php include './plantilla/cabezera.php';
           include 'conexion.php';
 
+          //Cual es la IP?
+          $ip = $_SERVER[‘REMOTE_ADDR’];
+          //Cual es el usuario actual?
+          if ($_SESSION['usuario'] != null){
+            $sesion = $_SESSION['usuario'];
+          } else {
+            $sesion = "Invitado";
+          }
+          
           //Añadimos nueva visita por ver esto
             $momento = date("Y-m-d/H:i:s");
-            $visita = "INSERT INTO views (MOMENTO)  VALUES('$momento')";
+            $visita = "INSERT INTO views (MOMENTO, IP, USUARIO)  VALUES('$momento', '$ip', '$sesion')";
 
                     //Introducir datos en BBDD
                   $result= $conexion -> query($visita);
