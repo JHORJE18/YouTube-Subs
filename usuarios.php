@@ -5,7 +5,7 @@
 
     $seccion = "Inicio sesion / Registro" ?>
 
-    <title>Vota | <?php echo $seccion; ?></title>
+    <title>YT Subs | <?php echo $seccion; ?></title>
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
