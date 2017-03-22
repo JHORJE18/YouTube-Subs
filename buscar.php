@@ -68,23 +68,37 @@
     if ($busca != null){
 ?>
 
-          <?php
-          //Busqueda preguntas
+    <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Canal</th>
+                    <th>Suscripciones</th>
+                    <th>+ Subscriptores</th>
+                    <th>Subscriptores YT</th>
+                    <th class="mdl-data-table__cell--non-numeric">Video</th>
+                    <th class="mdl-data-table__cell--non-numeric">Link</th>              
+                </tr>
+            </thead>
+            <tbody>
+
+        <?php
+          //Busqueda canales  
             for ($i=0; $i < 10; $i++) {
               //Variables
-              $fecha = "18/02/2017";
-              $hora = "12:00";
-              $idusuario = 1;
               $usuario = "JHORJE18";
-              $id = 20;
-              $pregunta = "¿Quien prefeririras ser de estos personajes?";
-              $opcionA = "Ser el megaSuperHEROE Hulk, capaz de destrozar todo lo que se encuentra en su camino!!";
-              $opcionB = "Ser un benito señor que lo sabe todo, pero no existe en este universo";
+              $suscripciones = 18;
+              $subs = 10;
+              $subsYT = 210;
+              $video = "https://www.youtube.com/watch?v=2wWC3m9i0wY";
+              $link = "https://www.youtube.com/channel/UC57XOrOWOWW4XN-W22s5UrQ";
 
-              include './plantilla/busqueda-preguntas.php';
+              include './plantilla/busqueda-canal.php';
             }
            ?>
-
+            </tbody>
+        </table>
+    </div>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white"><center>
             Pagina <?php
