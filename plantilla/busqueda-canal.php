@@ -23,7 +23,7 @@
               $usuario = $fila[1];
               $suscripciones = 18;
               $subsWEB = 10;
-              $canalID = "UC57XOrOWOWW4XN-W22s5UrQ";
+              $link = $fila[4];
               include './usuarios/obten-subsYT.php';
               $ya = false;
               $video = $fila[6];
