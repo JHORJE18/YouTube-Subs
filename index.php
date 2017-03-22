@@ -5,7 +5,7 @@
           include 'conexion.php';
 
           //Cual es la IP?
-          $ip = $_SERVER[‘REMOTE_ADDR’];
+          $ip =  $_SERVER['REMOTE_ADDR'];
           //Cual es el usuario actual?
           if ($_SESSION['usuario'] != null){
             $sesion = $_SESSION['usuario'];
