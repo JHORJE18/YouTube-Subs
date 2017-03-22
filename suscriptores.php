@@ -4,6 +4,7 @@
 
   <?php
   include 'conexion.php';
+  include 'seguridad.php';
 
       //Buscando en pagina contreta
       if (isset($_GET['pag'])){
@@ -33,7 +34,7 @@
         $busca = null;
         $seccion = "Buscando lo imposible";
       } else {
-          $seccion = "Suscibiendose";
+          $seccion = "Tus Subs";
       }
 
       include './plantilla/cabezera.php';
@@ -53,14 +54,15 @@
 
         <div class="mdl-grid demo-content">
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Suscribete a estos canales
+            Estos son los majos que se han suscrito a tu canal
           </center></div>
 
     <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
         <?php
           //Tabla canales  
-          //Consultamos numero de filas (N� Videos)
-            $campos = "SELECT * FROM usuarios";
+          $sesion = $_SESSION['usuario'];
+          //Consultamos numero de gente que se ha suscrito
+            $campos = "SELECT * FROM subscripcion WHERE USER-USER='$sesion";
             if ($resultado = $conexion -> query($campos)){
                 //Determinamos numero tablas
                 $numRESULT = $resultado -> num_rows;
@@ -85,7 +87,7 @@
           </center></div>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Estos son los majos que se han suscrito tu canal
+            Estos son los majos que se han suscrito a tu canal
           </center></div>
 
           </div>
