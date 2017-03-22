@@ -14,14 +14,19 @@
 <?php
 //Tabla de canales, obten el numero de resultados a mostrar en $numRESULT  
             for ($i=0; $i < $numRESULT; $i++) {
+                //Consultar valores a BBDD
+                $consulta = "SELECT * FROM usuarios LIMIT $i, 1 ";
+                 $consulta = $conexion->query($consulta);  //Ejecuta la consultaN
+                 $fila = $consulta->fetch_array();          //Mete los valores en el array $fila[]
+
               //Variables
-              $usuario = "JHORJE18";
+              $usuario = $fila[1];
               $suscripciones = 18;
               $subs = 10;
               $subsYT = 210;
-              $ya = true;
-              $video = "https://www.youtube.com/watch?v=2wWC3m9i0wY";
-              $link = "https://www.youtube.com/channel/UC57XOrOWOWW4XN-W22s5UrQ";
+              $ya = false;
+              $video = $fila[6];
+              $link = $fila[4];
 
               //Cada vuelta pon la fila
               ?>

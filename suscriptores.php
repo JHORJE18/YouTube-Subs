@@ -85,7 +85,7 @@
           </center></div>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Suscribete a estos canales
+            Estos son los majos que se han suscrito tu canal
           </center></div>
 
           </div>
