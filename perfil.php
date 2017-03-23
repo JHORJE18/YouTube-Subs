@@ -107,8 +107,8 @@
                   Estadisticas
                 </div>
                 <div class="mdl-cell mdl-cell--12-col">
-                        <?php                     
-                        include './cositas/estadisticas.php' ?>
+                        <?php        
+                        include './usuarios/estadisticas.php' ?>
                 </div>
               </div>
             </div>
