@@ -76,7 +76,7 @@
 
               <hr>
                 <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                <a href="<?php echo $perfilUser[7] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
+                <a href="<?php echo $perfilUser[4] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
 
          <?php   }
 

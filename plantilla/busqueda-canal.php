@@ -34,6 +34,20 @@
                  $subsWEB = $resultado -> num_rows;
                 }
 
+            //Comprueba si estas suscrito
+            $sesion = $_SESSION['usuario'];
+            $suscritoYA = "SELECT * FROM `subscripcion` WHERE `USER-SUB` = '$sesion' AND `USER-USER` = '$canalID'";
+                if ($resultado = $conexion -> query($suscritoYA)){
+                //Determinamos numero tablas
+                 $numYA = $resultado -> num_rows;
+                }
+
+                if ($numYA != null){
+                    $ya = true;
+                }   else    {
+                    $ya = false;
+                }
+
             //Visualizar estadisticas de canales a los que se ha suscrito
             $consultaCOL = "SELECT * FROM subscripcion WHERE `USER-SUB`= '$usuario'";
                 if ($resultado = $conexion -> query($consultaCOL)){
@@ -59,7 +73,7 @@
             if ($ya){
                 echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><i class="material-icons">check</i> Suscrito</div></a>';
             }   else  {
-                echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Suscribete</div></a>';
+                echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Suscribete</div></a>';
             }
         ?>
     </td>                
