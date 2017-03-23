@@ -30,6 +30,9 @@
                 $perfilUser[5] = "imagenes/user.jpg";
               }
 
+        //Sacamos canal ID
+        $division = explode("/", $perfilUser[4]);
+        $canalID = $division[4];
 
           $seccion = $usuarioVER;
     ?>
@@ -76,7 +79,7 @@
 
               <hr>
                 <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                <a href="<?php echo $perfilUser[4] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
+                <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
 
          <?php   }
 
@@ -97,7 +100,7 @@
               </div>
               <div class="mdl-card__actions mdl-card--border">
                   <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                  <a href="<?php echo $perfilUser[7] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribirse</div></a>
+                  <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
               </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
