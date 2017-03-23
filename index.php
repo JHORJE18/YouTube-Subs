@@ -21,7 +21,7 @@
                   $result= $conexion -> query($visita);
 
             if (!$result){
-                echo 'Tu visita no se puede registrar <br> '.$visita;
+                echo 'Tu visita no se puede registrar <br> ';
             }
 
     $seccion = "Inicio" ?>

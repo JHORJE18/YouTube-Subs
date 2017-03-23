@@ -32,11 +32,6 @@ include 'conexion.php';
           <?php
                 //Si tiene sesion abierta, muestra cerrar sesion, sino Registrarse / Iniciar sesion
               if(isset($_SESSION['usuario'])){
-                  echo '<li class="mdl-menu__item"><a href="addPregunta.php" class="mdl-button mdl-js-button mdl-button--raised">
-                          <i class="material-icons">add</i>Añadir pregunta</a></li>';
-                  echo "<hr>";
-                  echo '<li class="mdl-menu__item"><a href="logout.php" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                          <i class="material-icons">add</i>Añadir amigos</a></li>';
                   echo '<li class="mdl-menu__item"><a href="logout.php" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                         <i class="material-icons">close</i> Cerrar Sesión</a></li>';
               }   else    {

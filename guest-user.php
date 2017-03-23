@@ -62,14 +62,15 @@ if(isset($_POST["registrar"])){
         //Obtiene imagen
         //Sacamos canal ID
         $division = explode("/", $link);
-
         $canalID = $division[4];
 
 $api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key=AIzaSyDOuJvEC62tWQX7T5jtCx4Tqr8ZVvCqC-Y');
 $resultado = json_decode($api, true);
 $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
-
-
+if ($imagen == null){
+    $mensaje = "El link del canal no es valido";
+}   else {
+    
         //Convertir valores
         $correo = strtolower ( $correo ); //AUTOMATICAMENTE MINUSCULAS
 
@@ -105,7 +106,7 @@ $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
                 }
             }
         }
-
+    }    
         } else {
              $mensaje = "Todos los campos no deben de estar vacios!";
         }
@@ -123,7 +124,7 @@ $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
           echo ('</center></div>');
         }   ?>
 
-      <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white">
+      <div class="mdl-cell mdl-cell--8-col mdl-shadow--2dp mdl-color--white">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
                 <h1>Iniciar Sesión</h1>
@@ -143,7 +144,7 @@ $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
         </div>
       </div>
 
-      <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white">
+      <div class="mdl-cell mdl-cell--8-col mdl-shadow--2dp mdl-color--white">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
               <h1>Crear una cuenta</h1>
