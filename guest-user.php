@@ -122,9 +122,14 @@ if ($imagen == null){
           echo ('<div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--accent"><center>');
           echo $mensaje;
           echo ('</center></div>');
-        }   ?>
+        }   
 
-      <div class="mdl-cell mdl-cell--8-col mdl-shadow--2dp mdl-color--white">
+          echo ('<div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--accent"><center>');
+          echo "Los registros estan cerrados por el momento";
+          echo ('</center></div>');
+        ?>
+
+      <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
                 <h1>Iniciar Sesión</h1>
@@ -144,12 +149,12 @@ if ($imagen == null){
         </div>
       </div>
 
-      <div class="mdl-cell mdl-cell--8-col mdl-shadow--2dp mdl-color--white">
+      <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
               <h1>Crear una cuenta</h1>
                 <hr>
-              <form action="usuarios.php" method="post" class="registro">
+              <form action="<?php //usuarios.php ?>" method="post" class="registro">
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input name="usuario" class="mdl-textfield__input" type="text" id="usuario">
