@@ -74,8 +74,8 @@
                 <tr>
                     <th class="mdl-data-table__cell--non-numeric">Canal</th>
                     <th>Suscripciones</th>
-                    <th>+ Subscriptores</th>
-                    <th>Subscriptores YT</th>
+                    <th>+ suscriptores</th>
+                    <th>suscriptores YT</th>
                     <th class="mdl-data-table__cell--non-numeric">Video</th>
                     <th class="mdl-data-table__cell--non-numeric">Link</th>              
                 </tr>
