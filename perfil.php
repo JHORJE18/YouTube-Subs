@@ -70,7 +70,6 @@
               //Mostrar panel de usuarios ?>
 
               <span>Nombre: <?php echo $perfilUser[1] ?></spanh><br>
-              <span>Correo: <?php echo $perfilUser[2] ?></span><br>
               <span>Link canal: <?php echo $perfilUser[4] ?></span><br>
               <span>Video: <?php echo $perfilUser[6] ?></span><br>
               <span>Fecha registro: <?php echo $perfilUser[7] ?></span><br>
