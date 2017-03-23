@@ -9,7 +9,6 @@
                 //Determinamos numero tablas
                  $subsWEB = $resultado -> num_rows;
                 }
-            echo $consultaSUBS.'<br>';
 
             //Comprueba si estas suscrito
             $sesion = $_SESSION['usuario'];
@@ -18,7 +17,6 @@
                 //Determinamos numero tablas
                  $numYA = $resultado -> num_rows;
                 }
-            echo $suscritoYA.'<br>';
 
                 if ($numYA != null){
                     $ya = true;
@@ -32,7 +30,6 @@
                 //Determinamos numero tablas
                  $suscrito = $resultado -> num_rows;
                 }
-            echo $consultaCOL.'<br>';
 
               //Cada vuelta pon la fila
 ?>

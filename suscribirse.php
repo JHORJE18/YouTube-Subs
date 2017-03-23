@@ -25,9 +25,6 @@
                 }
       //Calculo total de paginas
       $total_paginas = ceil($num_total_reg / $TAMANO_PAGINA);
-      echo 'Numero registros encontrados: '.$num_total_reg.'<br>';
-      echo 'Se muestran paginas de '.$TAMANO_PAGINA.' registros cada una <br>';
-      echo 'Mostrando la pagina'.$pagina.' de '.$total_paginas.'<br>';
 
       include './plantilla/cabezera.php';
       ?>
@@ -55,43 +52,44 @@
               include './plantilla/tabla/cabezera.php';
 
          //Sentencia SQL
-        $criterio = "ORDER BY SUBSCRITO ASC";
-        $consulta = "SELECT * FROM usuarios ".$criterio." limit ".$inicio.",".$TAMANO_PAGINA;
-        echo $consulta.'<br>';
-        if ($resultado = $conexion -> query($consulta)){
-          if ($count = $resultado->num_rows){
-            //Obtiene array de objetos
-            while ($obj = $resultado->fetch_object()){
-                //Obtiene los datos
-                $sesion = $_SESSION['usuario'];
-                $usuario = $obj->USUARIO;
-                $link = $obj->LINK;
-                $subs = $obj->SUBS;
-                $video = $obj->VIDEO;
+        $criterio = "ORDER BY SUBSCRITO DESC";
+        $maxREG = $inicio + $TAMANO_PAGINA;
+        while ($inicio < $maxREG){
+              $consulta = "SELECT * FROM usuarios ".$criterio." limit ".$inicio.",".$TAMANO_PAGINA;
+              if ($resultado = $conexion -> query($consulta)){
+                    $obj = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+                    if ($obj != null){
+                      //Obtiene los datos
+                      $sesion = $_SESSION['usuario'];
+                      $usuario = $obj[1];
+                      $link = $obj[4];
+                      $subs = $obj[9];
+                      $video = $obj[6];
 
-                include './plantilla/tabla/fila.php';
-            }
-          }
+                      include './plantilla/tabla/fila.php';
+                    }
+              }
+              $inicio++;
         }
               //Fin de la tabla
               include './plantilla/tabla/fin.php';
              ?>
     </div>
 
-          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white"><center>
-            Pagina <?php
-                      for ($i=1; $i<=$maxPAG; $i++){
+          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white">
+            <span>  Pagina</span> <?php
+                      for ($i=1; $i<=$total_paginas; $i++){
                         //Muestra botones
-                        echo '<a href="./suscribirse.php?busca='.$busca.'&pag='.$i.'"><div class="mdl-button mdl-js-button mdl-js-ripple-effect';
-                          if ($i != $pag){
+                        echo '<a href="./suscribirse.php?pag='.$i.'"><div class="mdl-button mdl-js-button mdl-js-ripple-effect';
+                          if ($i != $pagina){
                             echo ' mdl-button--accent">'.$i.'</div></a>';
                           } else {
-                            echo ' mdl-button--colored">'.$i.'</div></a>';
+                            echo 'mdl-button--raised mdl-button--colored">'.$i.'</div></a>';
                           }
                       }
 
                     ?>
-          </center></div>
+          </div>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
             Suscribete a estos canales
