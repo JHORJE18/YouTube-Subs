@@ -43,8 +43,8 @@
       <main class="mdl-layout__content mdl-color--grey-100">
 
         <div class="mdl-grid demo-content">
-          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Esta gente maja se ha suscrito a tu canal
+          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--accent"><center>
+            PAGINA NO TERMINADA
           </center></div>
 
     <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
