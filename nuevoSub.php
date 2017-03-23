@@ -46,7 +46,7 @@ include 'conexion.php';
 
                         if ($result && $numREG && $add){
                             //Todo OK
-                            $link = "http://www.youtube.com/subscription_center?add_user=".$linkID;
+                            $link = "https://www.youtube.com/channel/".$linkID."?sub_confirmation=1";
                             header("Location: $link");
                         }   else    {
                             echo 'No se te ha podido suscribir en el sistema<br>'.$nuevo.'<br>'.$add;
