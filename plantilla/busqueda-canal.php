@@ -13,16 +13,14 @@
 
 <?php
 //Tabla de canales, obten el numero de resultados a mostrar en $numRESULT  
-            for ($i=0; $i < $numRESULT; $i++) {
+            for ($i=0; $i < $numRESULT; $i++) {          
                 //Consultar valores a BBDD
-                $consulta = "SELECT * FROM usuarios LIMIT $i, 1 ";
+                $consulta = "SELECT * FROM usuarios ORDER BY `usuarios`.`SUBSCRITO` DESC LIMIT $i, 1 ";
                  $consulta = $conexion->query($consulta);  //Ejecuta la consultaN
                  $fila = $consulta->fetch_array();          //Mete los valores en el array $fila[]
 
               //Variables
               $usuario = $fila[1];
-              $suscripciones = 18;
-              $subsWEB = 10;
               $link = $fila[4];
               include './usuarios/obten-subsYT.php';
               $ya = false;

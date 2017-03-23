@@ -32,15 +32,24 @@ include 'conexion.php';
                     //Redirigimos a suscribirle
                     $tiempo = date("Y-m-d/H:i:s");
                     $nuevo = "INSERT INTO subscripcion (`USER-SUB`, `USER-USER`, `TIEMPO`) VALUES ('$sesion', '$linkID', '$tiempo');";
-
-                     //Introducir datos en BBDD
                         $result= $conexion -> query($nuevo);
-                        if (!$result){
-                            echo 'No se te ha podido suscribir en el sistema<br>'.$nuevo;
-                        }   else    {
+                    
+                    //Obtener numero de suscripciones acumuladas
+                    $numREG = "SELECT * FROM `subscripcion` WHERE `USER-SUB`='$sesion'";  
+                    if ($resultadoREG = $conexion -> query($numREG)){
+                        //Determinamos numero tablas
+                        $numSUS = $resultadoREG -> num_rows;
+                    }
+
+                    $add = "UPDATE usuarios SET SUBSCRITO ='$numSUS' WHERE `usuarios`.`USUARIO` ='$sesion';";
+                        $resultALT= $conexion -> query($add);
+
+                        if ($result && $numREG && $add){
                             //Todo OK
                             $link = "http://www.youtube.com/subscription_center?add_user=".$linkID;
                             header("Location: $link");
+                        }   else    {
+                            echo 'No se te ha podido suscribir en el sistema<br>'.$nuevo.'<br>'.$add;
                         }
                 }
 
