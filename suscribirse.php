@@ -55,21 +55,24 @@
               include './plantilla/tabla/cabezera.php';
 
          //Sentencia SQL
-        $criterio = "ORDER BY SUBSCRITO DESC";
+        $criterio = "ORDER BY SUBSCRITO ASC";
         $consulta = "SELECT * FROM usuarios ".$criterio." limit ".$inicio.",".$TAMANO_PAGINA;
         echo $consulta.'<br>';
-        $resultado = $conexion -> query($consulta);
-          //Obtiene array de objetos
-          while ($obj = $resultado->fetch_array()){
-              //Obtiene los datos
-              $sesion = $_SESSION['usuario'];
-              $usuario = $obj[1];
-              $link = $obj[4];
-              $subs = $obj[9];
-              $video = $obj[6];
+        if ($resultado = $conexion -> query($consulta)){
+          if ($count = $resultado->num_rows){
+            //Obtiene array de objetos
+            while ($obj = $resultado->fetch_object()){
+                //Obtiene los datos
+                $sesion = $_SESSION['usuario'];
+                $usuario = $obj->USUARIO;
+                $link = $obj->LINK;
+                $subs = $obj->SUBS;
+                $video = $obj->VIDEO;
 
-              include './plantilla/tabla/fila.php';
+                include './plantilla/tabla/fila.php';
+            }
           }
+        }
               //Fin de la tabla
               include './plantilla/tabla/fin.php';
              ?>
