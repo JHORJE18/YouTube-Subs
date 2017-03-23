@@ -60,10 +60,14 @@
     <div class="mld-grid mdl-cell mdl-cell--12-col">
         <h1>Contacta con el soporte</h1>
         <hr>
-        <a href="mailto:wiijlg@hotmail.com"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">email</i>Correo Electronico</div></a>
-        <a href="http://www.forocoches.com/foro/showthread.php?t=5508434&highlight="><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">forum</i>Foro</div></a>
-        <br>
-        <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+        <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:100%"></div>
+            <br>
+                <center>
+                    <a href="mailto:wiijlg@hotmail.com"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">email</i>Correo Electronico</div></a>
+                    <a href="http://www.forocoches.com/foro/showthread.php?t=5508434&highlight="><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">forum</i>Foro</div></a>
+                </center>
+            <br>
+        <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:100%"></div>
     </div>
     </div>
 
