@@ -56,9 +56,15 @@
             Contactar
           </center></div>
 
-    <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
-        <h1>Correo electronico de soporte</h1>
-        <span>wiijlg@hotmail.com</span>
+    <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white">
+    <div class="mld-grid mdl-cell mdl-cell--12-col">
+        <h1>Contacta con el soporte</h1>
+        <hr>
+        <a href="mailto:wiijlg@hotmail.com"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">email</i>Correo Electronico</div></a>
+        <a href="http://www.forocoches.com/foro/showthread.php?t=5508434&highlight="><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">forum</i>Foro</div></a>
+        <br>
+        <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+    </div>
     </div>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
