@@ -79,7 +79,7 @@
 
               <hr>
                 <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
+                <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribete</div></a>
 
          <?php   }
 
@@ -100,7 +100,7 @@
               </div>
               <div class="mdl-card__actions mdl-card--border">
                   <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                  <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
+                  <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribete</div></a>
               </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
