@@ -52,7 +52,7 @@
                 <h2 class="mdl-card__title-text">YT Sub Random</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                  En esta web puedes suscribirte a canales que les gustaria tener mas seguidores, por supuesto tu decides si queires suscribirte.
+                  En esta web puedes suscribirte a canales que les gustaría tener mas seguidores, por supuesto tu decides si queires suscribirte.
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a href="contruccion.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Investigar mas</a>
