@@ -47,7 +47,7 @@
         <div class="mdl-grid demo-content">
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            <?php echo $usuarioVER ?>
+            Perfil: <?php echo $usuarioVER ?>
           </center></div>
 
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
