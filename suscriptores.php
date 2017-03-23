@@ -4,38 +4,7 @@
 
   <?php
   include 'conexion.php';
-  include 'seguridad.php';
-
-      //Buscando en pagina contreta
-      if (isset($_GET['pag'])){
-        $pag = $_GET['pag'];
-      } else {
-        $pag = 1;
-      }
-      
-      //Total columnas resultados
-      $totalMAX = 58;
-
-      //Limite de 50 resultados por pagina
-      $consultaPAG = $totalMAX / 50;
-
-      $maxPAG = $consultaPAG;
-
-          //Elimina decimal al superior
-                if (round($maxPAG, 0, PHP_ROUND_HALF_UP) != $maxPAG){
-                  $maxPAG = round($maxPAG, 0, PHP_ROUND_HALF_UP);
-                  $maxPAG++;
-                } else {
-                  $maxPAG = round($maxPAG, 0, PHP_ROUND_HALF_UP);
-                }
-
-      //Si la pagina de la URL supera paginas dispondibles
-      if ($pag > $maxPAG){
-        $busca = null;
-        $seccion = "Buscando lo imposible";
-      } else {
-          $seccion = "Tus Subs";
-      }
+  $seccion = "Tus suscriptores";
 
       include './plantilla/cabezera.php';
       ?>
@@ -54,40 +23,17 @@
 
         <div class="mdl-grid demo-content">
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Estos son los majos que se han suscrito a tu canal
+            Esta gente maja se ha suscrito a tu canal
           </center></div>
 
     <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
         <?php
           //Tabla canales  
-          $sesion = $_SESSION['usuario'];
-          //Consultamos numero de gente que se ha suscrito
-            $campos = "SELECT * FROM subscripcion WHERE USER-USER='$sesion";
-            if ($resultado = $conexion -> query($campos)){
-                //Determinamos numero tablas
-                $numRESULT = $resultado -> num_rows;
-            }
-
-            include './plantilla/busqueda-canal.php'; ?>
+            include './plantilla/suscriptores-micanal.php'; ?>
     </div>
 
-          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white"><center>
-            Pagina <?php
-                      for ($i=1; $i<=$maxPAG; $i++){
-                        //Muestra botones
-                        echo '<a href="./suscribirse.php?busca='.$busca.'&pag='.$i.'"><div class="mdl-button mdl-js-button mdl-js-ripple-effect';
-                          if ($i != $pag){
-                            echo ' mdl-button--accent">'.$i.'</div></a>';
-                          } else {
-                            echo ' mdl-button--colored">'.$i.'</div></a>';
-                          }
-                      }
-
-                    ?>
-          </center></div>
-
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Estos son los majos que se han suscrito a tu canal
+            Esta gente maja se ha suscrito a tu canal
           </center></div>
 
           </div>
