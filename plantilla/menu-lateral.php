@@ -47,9 +47,9 @@ include 'conexion.php';
   <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
     <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Inicio</a>
     <a class="mdl-navigation__link" href="perfil.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Perfil</a>
-    <a class="mdl-navigation__link" href="suscriptores.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people_outline</i>Subscriptores</a>
+    <a class="mdl-navigation__link" href="suscriptores.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people_outline</i>Suscriptores</a>
     <a class="mdl-navigation__link" href="suscribirse.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Suscribirse</a>
-    <a class="mdl-navigation__link" href="construccion.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">movie</i>Videos de Subscriptores</a>
+    <a class="mdl-navigation__link" href="construccion.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">movie</i>Videos de suscriptores</a>
     <a class="mdl-navigation__link" href="construccion.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Reportes</a>
     <a class="mdl-navigation__link" href="contacto.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">contacts</i>Contacto</a>
     <div class="mdl-layout-spacer"></div>
