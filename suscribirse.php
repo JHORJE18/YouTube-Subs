@@ -5,36 +5,29 @@
   <?php
   include 'conexion.php';
 
-      //Buscando en pagina contreta
-      if (isset($_GET['pag'])){
-        $pag = $_GET['pag'];
-      } else {
-        $pag = 1;
+      //Limito la busqueda
+      $TAMANO_PAGINA = 10;
+
+      //Examino la pagina a mostrar
+      $pagina = $_GET['pag'];
+      if (!$pagina){
+        $inicio = 0;
+        $pagina = 1;
+      } else  {
+        $inicio = ($pagina -1) * $TAMANO_PAGINA;
       }
-      
-      //Total columnas resultados
-      $totalMAX = 58;
 
-      //Limite de 50 resultados por pagina
-      $consultaPAG = $totalMAX / 50;
-
-      $maxPAG = $consultaPAG;
-
-          //Elimina decimal al superior
-                if (round($maxPAG, 0, PHP_ROUND_HALF_UP) != $maxPAG){
-                  $maxPAG = round($maxPAG, 0, PHP_ROUND_HALF_UP);
-                  $maxPAG++;
-                } else {
-                  $maxPAG = round($maxPAG, 0, PHP_ROUND_HALF_UP);
+      //Miro numero de campos
+      $consultaCAMPOS = "SELECT * FROM usuarios";
+                if ($resultado = $conexion -> query($consultaCAMPOS)){
+                    //Determinamos numero tablas
+                    $num_total_reg = $resultado -> num_rows;
                 }
-
-      //Si la pagina de la URL supera paginas dispondibles
-      if ($pag > $maxPAG){
-        $busca = null;
-        $seccion = "Buscando lo imposible";
-      } else {
-          $seccion = "Suscibiendose";
-      }
+      //Calculo total de paginas
+      $total_paginas = ceil($num_total_reg / $TAMANO_PAGINA);
+      echo 'Numero registros encontrados: '.$num_total_reg.'<br>';
+      echo 'Se muestran paginas de '.$TAMANO_PAGINA.' registros cada una <br>';
+      echo 'Mostrando la pagina'.$pagina.' de '.$total_paginas.'<br>';
 
       include './plantilla/cabezera.php';
       ?>
@@ -58,15 +51,28 @@
 
     <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
         <?php
-          //Tabla canales  
-          //Consultamos numero de filas (N� Videos)
-            $campos = "SELECT * FROM usuarios";
-            if ($resultado = $conexion -> query($campos)){
-                //Determinamos numero tablas
-                $numRESULT = $resultado -> num_rows;
-            }
+              //Principio de la tabla
+              include './plantilla/tabla/cabezera.php';
 
-            include './plantilla/busqueda-canal.php'; ?>
+         //Sentencia SQL
+        $criterio = "ORDER BY SUBSCRITO DESC";
+        $consulta = "SELECT * FROM usuarios ".$criterio." limit ".$inicio.",".$TAMANO_PAGINA;
+        echo $consulta.'<br>';
+        $resultado = $conexion -> query($consulta);
+          //Obtiene array de objetos
+          while ($obj = $resultado->fetch_array()){
+              //Obtiene los datos
+              $sesion = $_SESSION['usuario'];
+              $usuario = $obj[1];
+              $link = $obj[4];
+              $subs = $obj[9];
+              $video = $obj[6];
+
+              include './plantilla/tabla/fila.php';
+          }
+              //Fin de la tabla
+              include './plantilla/tabla/fin.php';
+             ?>
     </div>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white"><center>
