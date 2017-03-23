@@ -45,7 +45,7 @@
 
           <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
             <div class="mdl-grid">
-            <h1>Hola</h1>
+              <?php include './plantilla/bienvenido.php';?>
             </div>
           </div>
 

@@ -54,8 +54,8 @@
           </center></div>
 
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people_outline</i>Subscriptores</div></a>
-            <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people</i>Suscribirse</div></a>
+            <a href="suscriptores.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people_outline</i>Subscriptores</div></a>
+            <a href="suscribirse.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people</i>Suscribirse</div></a>
             <a href="construccion.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Videos de Subscriptores</div></a>
           </div>
 
@@ -76,6 +76,14 @@
               <span>Link canal: <?php echo $perfilUser[4] ?></span><br>
               <span>Video: <?php echo $perfilUser[6] ?></span><br>
               <span>Fecha registro: <?php echo $perfilUser[7] ?></span><br>
+              <hr>
+
+              <?php
+              //Video
+              $division = explode("=", $perfilUser[6]);
+              $videoID = end($division);
+              ?>
+              <iframe height="400px" src="https://www.youtube.com/embed/<?php echo $videoID?>?rel=0" frameborder="1" allowfullscreen></iframe>
 
               <hr>
                 <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
@@ -90,11 +98,11 @@
           </div>
 
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-shadow--4dp mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
               <img src="<?php echo $perfilUser[5] ?>" style="width: 100%">
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
-            <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
               <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
                 <h2 class="mdl-card__title-text">@<?php echo $usuarioVER ?></h2>
               </div>
