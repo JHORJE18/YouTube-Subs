@@ -153,6 +153,7 @@ if ($imagen == null){
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
               <h1>Crear una cuenta</h1>
+              <span>Cerrado por problemas técnicos</span>
                 <hr>
               <form action="<?php //usuarios.php ?>" method="post" class="registro">
 
@@ -183,7 +184,7 @@ if ($imagen == null){
                       <label class="mdl-textfield__label" for="repasswordC">Confirma la contraseña</label>
                 </div>
 
-                  <div><input type="submit" name="registrar" value="Registrarse" id="registrar" class="mdl-button mdl-js-button mdl-button--colored"></div><br>
+                  <div><input type="<?php //submit ?>" name="registrar" value="Registrarse" id="registrar" class="mdl-button mdl-js-button mdl-button--colored"></div><br>
               </form>
             </div>
           </div>

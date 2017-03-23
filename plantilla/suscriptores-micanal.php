@@ -45,7 +45,6 @@ $consultaUSER = "SELECT * FROM usuarios WHERE USUARIO= '$sesion'";
               $usuario = $fila[1];
               $link = $fila[4];
               include './usuarios/obten-subsYT.php';
-              $ya = false;
               $video = $fila[6];
               $link = $fila[4];
 

@@ -20,9 +20,6 @@
                     //Introducir datos en BBDD
                   $result= $conexion -> query($visita);
 
-            if (!$result){
-                echo 'Tu visita no se puede registrar <br> ';
-            }
 
     $seccion = "Inicio" ?>
 
