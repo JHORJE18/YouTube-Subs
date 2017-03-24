@@ -8,6 +8,25 @@
   $seccion = "Contacto";
 
       include './plantilla/cabezera.php';
+
+
+      //Contacto a traves del MAIL
+      if (isset($_REQUEST['email']))  {
+        
+        //Email information
+        $admin_email = "wiijlg@hotmail.com";
+        $email = $_REQUEST['email'];
+        $subject = $_REQUEST['subject'];
+        $separa = "\n-------------------------\n";
+        $comment = "----SOPORTE YT SUBS----".$separa.$_REQUEST['comment'].$separa;
+        
+        //Enviar correo
+        mail($admin_email, "$subject", $comment, "From:" . $email);
+        
+        //Mensaje
+        $mensaje = "Gracias por enviar el mensaje!";
+      }
+
       ?>
 
 
@@ -39,6 +58,30 @@
                 </center>
             <br>
         <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:100%"></div>
+
+          <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col mdl-color--white">
+                  <h1>Envia un mensaje</h1>
+                  <hr>
+                    <form action="contacto.php" method="post" class="mensaje">
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input name="email" class="mdl-textfield__input" type="text" id="email">
+                          <label class="mdl-textfield__label" for="email">Email</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input name="subject" class="mdl-textfield__input" type="subject" id="subject">
+                          <label class="mdl-textfield__label" for="subject">Asunto</label>
+                        </div>
+                        <br>
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <textarea name="comment" class="mdl-textfield__input" type="text" rows= "5" id="comment" ></textarea>
+                          <label class="mdl-textfield__label" for="comment">Mensaje</label>
+                        </div>
+                      <div><input type="submit" name="submit" value="Enviar" class="mdl-button mdl-js-button mdl-button--colored"></div>
+                      <br>
+                    </form>
+                  </div>
+          </div>
 
         <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--accent"><center>
             Fundador
