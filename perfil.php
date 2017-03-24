@@ -101,8 +101,15 @@
 
               <hr>
                 <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribete</div></a>
-                <hr>
+                          <?php
+                          //Variable $ya, sera true si esta suscrito / false si no lo esta
+                              if ($ya){
+                                  echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><i class="material-icons">check</i> Suscrito</div></a>';
+                              }   else  {
+                                  echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Suscribete</div></a>';
+                              }
+                          ?>                
+            <hr>
                       <!--ANUNCIO-->
                       <script type="text/javascript">
                       ( function() {
