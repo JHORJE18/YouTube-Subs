@@ -76,14 +76,14 @@
                 </div>
               </div>
             </div>
-            <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
-              <div class="mdl-grid">
-                  Versión actual v
-                    <a href="versiones.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">settings_backup_restore</i>v <?php echo $versionULTIMA?></div></a>
-              </div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div class="mdl-shadow--4dp mdl-cell mdl-cell--4-col mdl-cell--12-col mdl-color--white">
+              <div class="mdl-grid"><center>
+                    <a href="versiones.php"><div class=" mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">settings_backup_restore</i>Versión actual v <?php echo $versionULTIMA?></div></a>
+              </center></div>
             </div>
-
-            <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
+            <div class="demo-separator mdl-cell--1-col"></div>
+            <div class="mdl-shadow--4dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
               <div class="mdl-grid">
                 <!--ANUNCIO-->
                     <script type="text/javascript">
