@@ -19,6 +19,9 @@
         $subject = $_REQUEST['subject'];
         $separa = "\n-------------------------\n";
         $comment = "----SOPORTE YT SUBS----".$separa.$_REQUEST['comment'].$separa;
+
+        $comment += "Enviado por: ".$email;
+        $comment += "\nFecha y hora: ".date("Y-m-d/H:i:s");
         
         //Enviar correo
         mail($admin_email, "$subject", $comment, "From:" . $email);
