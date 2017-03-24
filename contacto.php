@@ -5,36 +5,7 @@
   <?php
   include 'conexion.php';
 
-      //Buscando en pagina contreta
-      if (isset($_GET['pag'])){
-        $pag = $_GET['pag'];
-      } else {
-        $pag = 1;
-      }
-      
-      //Total columnas resultados
-      $totalMAX = 58;
-
-      //Limite de 50 resultados por pagina
-      $consultaPAG = $totalMAX / 50;
-
-      $maxPAG = $consultaPAG;
-
-          //Elimina decimal al superior
-                if (round($maxPAG, 0, PHP_ROUND_HALF_UP) != $maxPAG){
-                  $maxPAG = round($maxPAG, 0, PHP_ROUND_HALF_UP);
-                  $maxPAG++;
-                } else {
-                  $maxPAG = round($maxPAG, 0, PHP_ROUND_HALF_UP);
-                }
-
-      //Si la pagina de la URL supera paginas dispondibles
-      if ($pag > $maxPAG){
-        $busca = null;
-        $seccion = "Buscando lo imposible";
-      } else {
-          $seccion = "Suscibiendose";
-      }
+  $seccion = "Contacto";
 
       include './plantilla/cabezera.php';
       ?>
@@ -68,6 +39,33 @@
                 </center>
             <br>
         <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:100%"></div>
+
+        <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--accent"><center>
+            Fundador
+          </center></div>
+        <?php
+          //Principio de la tabla
+              include './plantilla/tabla/cabezera.php';
+
+         //Sentencia SQL
+         $jefe = "JHORJE18";
+              $consulta = "SELECT * FROM usuarios WHERE USUARIO='$jefe'";
+              if ($resultado = $conexion -> query($consulta)){
+                    $obj = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+                      //Obtiene los datos
+                      $sesion = $_SESSION['usuario'];
+                      $usuario = $obj[1];
+                      $link = $obj[4];
+                      $subs = $obj[9];
+                      $video = $obj[6];
+
+                      include './plantilla/tabla/fila.php';
+              }
+              //Fin de la tabla
+              include './plantilla/tabla/fin.php';
+          ?>
+
+
     </div>
     </div>
 

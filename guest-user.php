@@ -13,6 +13,7 @@ if(isset($_POST["iniciar"])){
     //Obten datos introducidos
     $usuario=$_POST['usuario'];
     $password=$_POST['password'];
+    $password = str_replace("'",$password);
 
     //CONSULTA USUARIO
     $consultaUSUARIO = "SELECT * FROM usuarios WHERE USUARIO='$usuario'";
@@ -64,7 +65,13 @@ if(isset($_POST["registrar"])){
         $division = explode("/", $link);
         $canalID = $division[4];
 
-$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key=AIzaSyCiupo0cbBzvHQK-00ekyQBBpcrR7p9Qes');
+        $api = "SELECT * FROM `GoogleAPI` ORDER BY `GoogleAPI`.`ID` DESC";
+        if ($resultado = $conexion -> query($consulta)){
+            $obj = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+            $llave = $obj[1];
+        }
+
+$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key='.$llave.'');
 $resultado = json_decode($api, true);
 $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
 if ($imagen == null){

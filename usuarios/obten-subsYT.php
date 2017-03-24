@@ -5,7 +5,14 @@ $division = explode("/", $link);
 
 $canalID = $division[4];
 
-$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=statistics&id='.$canalID.'&key=AIzaSyCiupo0cbBzvHQK-00ekyQBBpcrR7p9Qes');
+//Obten ultima clave para API Google
+$api = "SELECT * FROM `GoogleAPI` ORDER BY `GoogleAPI`.`ID` DESC";
+        if ($resultado = $conexion -> query($consulta)){
+            $obj = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+            $llave = $obj[1];
+        }
+
+$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=statistics&id='.$canalID.'&key='.$llave.'');
 
 $resultado = json_decode($api, true);
 
