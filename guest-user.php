@@ -44,6 +44,42 @@ if(isset($_POST["iniciar"])){
     }
 }
 
+//Confirmamos que quiere recuperar sus datos
+if (isset($_POST['recuperar'])){
+    if (isset($_POST['usuario'])){
+        //Ha puesto algo en el campo Usuario
+        $user = $_POST['usuario'];
+        $division = explode("@", $user);
+
+        if ($division[1] != null){
+            //Correo valido macho
+            $valeCORREO = "SELECT * FROM usuarios WHERE CORREO LIKE '$user'";
+              if ($resultado = $conexion -> query($valeCORREO)){
+                    $datos = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+              }
+
+            //Email information
+                $email = $user;
+                $admin_email = "wiijlg@hotmail.com";
+                $subject = "Soporte YT Subs | Datos de su cuenta";
+                $separa = "\n--------------------------------------------------\n";
+                $info = "Has solicitado recuperar tus datos, aqui te los dejo\nUsuario: ".$datos[1]."\nCorreo: ".$datos[2]."\nContraseña: ".$datos[3];
+
+                $comment = $separa.$info.$separa;
+                        
+                //Enviar correo
+                mail($email, "$subject", $comment, "From:" . $admin_email);
+
+
+        }   else  {
+            $mensaje = "Ponga su <strong>correo</strong> en el campo Usuario";
+        }
+    }   else {
+        //No ha puesto nada en usuario
+        $mensaje = "Ponga su <strong>correo</strong> en el campo Usuario";
+    }
+}
+
 //Confirmamos que queremos registrar y procedemos a registrar
 if(isset($_POST["registrar"])){
 
@@ -160,6 +196,7 @@ if ($imagen == null){
                         <label class="mdl-textfield__label" for="password">Contraseña</label>
                       </div>
                     <div><input type="submit" name="iniciar" value="Iniciar Sesion" class="mdl-button mdl-js-button mdl-button--colored"></div>
+                    <div><input type="submit" name="recuperar" value="Recuperar datos" class="mdl-button mdl-js-button mdl-button--colored"></div>
                   </form>
                 </div>
         </div>
@@ -174,7 +211,7 @@ if ($imagen == null){
 
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input name="usuario" class="mdl-textfield__input" type="text" id="usuario">
-                    <label class="mdl-textfield__label" for="usuario">Nombre de canal</label>
+                    <label class="mdl-textfield__label" for="usuario">Usuario</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                       <input name="email" class="mdl-textfield__input" type="email" id="email">
