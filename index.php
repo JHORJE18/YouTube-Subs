@@ -20,6 +20,13 @@
                     //Introducir datos en BBDD
                   $result= $conexion -> query($visita);
 
+          //Obten ultima version
+           $consultaV = "SELECT * FROM version ORDER BY  `version`.`ID` DESC";
+              if ($resultado = $conexion -> query ($consultaV)){
+                    $fila = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+                    $versionULTIMA = $fila[1];
+              }
+
 
     $seccion = "Inicio" ?>
 
@@ -69,6 +76,13 @@
                 </div>
               </div>
             </div>
+            <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
+              <div class="mdl-grid">
+                  Versión actual v
+                    <a href="versiones.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">settings_backup_restore</i>v <?php echo $versionULTIMA?></div></a>
+              </div>
+            </div>
+
             <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
               <div class="mdl-grid">
                 <!--ANUNCIO-->

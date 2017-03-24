@@ -42,7 +42,7 @@
                     $numTotalV = $resultado -> num_rows;          //Mete los valores en el array $fila[]
               }
               for ($i=0; $i<$numTotalV; $i++){
-                  $verVERSION = "SELECT * FROM version ORDER BY `version`.`ID` DESC";
+                  $verVERSION = "SELECT * FROM version ORDER BY `version`.`ID` DESC LIMIT ".$i.", 1";
                   if ($resto = $conexion->query($verVERSION)){
                       $versionLINEA = $resto->fetch_array();
                       
