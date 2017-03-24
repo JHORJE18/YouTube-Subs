@@ -64,7 +64,7 @@ if(isset($_POST["registrar"])){
         $division = explode("/", $link);
         $canalID = $division[4];
 
-$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key=AIzaSyDOuJvEC62tWQX7T5jtCx4Tqr8ZVvCqC-Y');
+$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key=AIzaSyCiupo0cbBzvHQK-00ekyQBBpcrR7p9Qes');
 $resultado = json_decode($api, true);
 $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
 if ($imagen == null){

@@ -63,8 +63,9 @@
             Buscando: <?php if ($busca != null) {echo $busca;} else { echo "a la nada";} ?>
           </center></div>
 
-    <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp">
+    <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white">
         <?php
+    if ($busca != null){
               //Principio de la tabla
               include './plantilla/tabla/cabezera.php';
 
@@ -90,9 +91,14 @@
         }
               //Fin de la tabla
               include './plantilla/tabla/fin.php';
+    } else {
+      echo '<center><h1>Oye tu, que yo sepa, no estas buscando nada :/</h1></center>';
+    }
              ?>
     </div>
 
+<?php 
+    if ($busca != null){  ?>
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white">
             <span>  Pagina</span> <?php
                       for ($i=1; $i<=$total_paginas; $i++){
@@ -107,6 +113,9 @@
 
                     ?>
           </div>
+  
+  <?php 
+    } ?>
 
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
             Buscando: <?php if ($busca != null) {echo $busca;} else { echo "a la nada";} ?>
