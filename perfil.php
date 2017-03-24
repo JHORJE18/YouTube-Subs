@@ -34,6 +34,20 @@
         $division = explode("/", $perfilUser[4]);
         $canalID = $division[4];
 
+        //Comprueba si estas suscrito
+            $sesion = $_SESSION['usuario'];
+            $suscritoYA = "SELECT * FROM `subscripcion` WHERE `USER-SUB` = '$sesion' AND `USER-USER` = '$canalID'";
+                if ($resultado = $conexion -> query($suscritoYA)){
+                //Determinamos numero tablas
+                 $numYA = $resultado -> num_rows;
+                }
+
+                if ($numYA != null){
+                    $ya = true;
+                }   else    {
+                    $ya = false;
+                }
+
           $seccion = $usuarioVER;
     ?>
 
@@ -119,8 +133,15 @@
               </div>
               <div class="mdl-card__actions mdl-card--border">
                   <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
-                  <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribete</div></a>
-              </div>
+                    <?php
+                    //Variable $ya, sera true si esta suscrito / false si no lo esta
+                        if ($ya){
+                            echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><i class="material-icons">check</i> Suscrito</div></a>';
+                        }   else  {
+                            echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Suscribete</div></a>';
+                        }
+                    ?>
+            </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
             <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
