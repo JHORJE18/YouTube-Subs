@@ -9,7 +9,7 @@
       if (isset($_REQUEST['buscar'])) {
         $busca = $_REQUEST['buscar'];
         $seccion = "Busqueda: ".$busca;
-      }   else if (isset ($_GET['busca'])) {
+      }  else if (isset ($_GET['busca'])) {
         $busca = $_GET['busca'];
         $seccion = "Busqueda: ".$busca;
       } else {
@@ -103,7 +103,7 @@
             <span>  Pagina</span> <?php
                       for ($i=1; $i<=$total_paginas; $i++){
                         //Muestra botones
-                        echo '<a href="./buscar.php?pag='.$i.'?busca='.$busca.'"><div class="mdl-button mdl-js-button mdl-js-ripple-effect';
+                        echo '<a href="./buscar.php?pag='.$i.'&busca='.$busca.'"><div class="mdl-button mdl-js-button mdl-js-ripple-effect';
                           if ($i != $pagina){
                             echo ' mdl-button--accent">'.$i.'</div></a>';
                           } else {
