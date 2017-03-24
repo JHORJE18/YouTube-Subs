@@ -28,6 +28,8 @@ include 'conexion.php';
                 if ($num > 0){
                     //Ya ha sido suscrito teoricamente
                     $mensaje = "Ya te has suscrito a este canal";
+                    $link = "https://www.youtube.com/channel/".$linkID."?sub_confirmation=1";
+                    header("Location: $link");
                 }   else    {
                     //Redirigimos a suscribirle
                     $tiempo = date("Y-m-d/H:i:s");
