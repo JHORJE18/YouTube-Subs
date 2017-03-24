@@ -12,7 +12,7 @@ $canalID = $division[4];
             $llave = $obj[1];
         }
 
-$api = ('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key='.$llave.'');
+$api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key='.$llave.'');
 
 $resultado = json_decode($api, true);
 

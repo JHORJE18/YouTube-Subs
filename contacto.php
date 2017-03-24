@@ -63,6 +63,16 @@
               }
               //Fin de la tabla
               include './plantilla/tabla/fin.php';
+
+              //Obten ultima clave para API Google
+    $apiG = "SELECT * FROM `GoogleAPI` ORDER BY `GoogleAPI`.`ID` DESC";
+        if ($resultado_API = $conexion -> query($apiG)){
+            $obj = $resultado_API->fetch_array();          //Mete los valores en el array $fila[]
+            $llave = $obj[1];
+        }
+
+$api = ('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key='.$llave.'');
+
           ?>
 
 
