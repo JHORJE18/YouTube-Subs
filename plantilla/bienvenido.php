@@ -2,8 +2,10 @@
 <hr>
 <p>Esta es una plataforma donde te podrás suscribir a otros canales de YouTube 
     y a la vez promocionar el tuyo, de manera 100% Gratis, sin anuncios y sin 
-    bots ni cosas de cuentas falsas.</p>
-
+    bots ni cosas de cuentas falsas.
+    
+    <strong>Esto es algo "social" y debes de ser buena persona y apoyar a otros canales como quieres que ellos tambien te apoyen a ti</strong>
+</p>
 <br>
 <img src="https://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2015/07/youtubegif.gif" style="width: 100%; height: 100%" align="center">
 <br>
