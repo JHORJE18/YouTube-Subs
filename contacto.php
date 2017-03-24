@@ -72,7 +72,7 @@
         }
 
 $api = ('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key='.$llave.'');
-
+echo $api;
           ?>
 
 

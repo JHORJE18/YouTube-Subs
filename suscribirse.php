@@ -4,6 +4,7 @@
 
   <?php
   include 'conexion.php';
+  include 'seguridad.php';
 
       //Limito la busqueda
       $TAMANO_PAGINA = 10;

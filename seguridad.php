@@ -1,7 +1,9 @@
 <?php
+    session_start();
 
-    if ($_SESSION['usuario'] == null){
-        //No tiene ninguna sesion iniciada
-        header("Location: usuario.php");
+    if ($_SESSION['usuario'] != null){
+      //Sesion puede continuar
+    } else {
+      header ('Location: index.php');
     }
 ?>

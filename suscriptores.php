@@ -4,6 +4,7 @@
 
   <?php
   include 'conexion.php';
+  include 'seguridad.php';
   $seccion = "Tus suscriptores";
 
   //Limito la busqueda
