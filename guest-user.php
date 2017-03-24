@@ -13,7 +13,6 @@ if(isset($_POST["iniciar"])){
     //Obten datos introducidos
     $usuario=$_POST['usuario'];
     $password=$_POST['password'];
-    $password = str_replace("'",$password);
 
     //CONSULTA USUARIO
     $consultaUSUARIO = "SELECT * FROM usuarios WHERE USUARIO='$usuario'";
