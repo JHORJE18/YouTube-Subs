@@ -89,6 +89,20 @@ if ($imagen == null){
 
         if($result){
          $mensaje = "Cuenta Correctamente Creada";
+
+                 //Email information
+                $email = $correo;
+                $admin_email = "wiijlg@hotmail.com";
+                $subject = "Soporte YT Subs | Registrado";
+                $separa = "\n--------------------------------------------------\n";
+                $datos = "Ya estas registrado!\nUsuario: ".$usuario."\nCorreo: ".$correo."\nContraseña: ".$contrasena;
+
+                $comment = $separa.$datos.$separa;
+                        
+                //Enviar correo
+                mail($email, "$subject", $comment, "From:" . $admin_email);
+
+
         } else {    //No se puede insertar
          //Es por el USUARIO??
                 $consultaUSUARIO = "SELECT USUARIO FROM usuarios WHERE USUARIO='$usuario'";
