@@ -89,6 +89,17 @@
                 <a href="<?php echo $perfilUser[6] ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Video</div></a>
                 <a href="nuevoSub.php?canal=<?php echo $canalID ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">arrow_forward</i>Suscribete</div></a>
 
+                      <!--ANUNCIO-->
+                      <script type="text/javascript">
+                      ( function() {
+                        if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+                        var unit = {"calltype":"async[2]","publisher":"jhorje18","width":728,"height":90,"sid":"Chitika Default"};
+                        var placement_id = window.CHITIKA.units.length;
+                        window.CHITIKA.units.push(unit);
+                        document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+                    }());
+                    </script>
+                    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
          <?php   }
 
             echo '</div>';

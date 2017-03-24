@@ -52,7 +52,7 @@
                 <h2 class="mdl-card__title-text">YT Sub Random</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                  En esta web puedes suscribirte a canales que les gustaría tener mas seguidores, por supuesto tu decides si queires suscribirte.
+                  En esta web puedes suscribirte a canales que les gustaría tener mas seguidores, por supuesto tu decides si quieres suscribirte.
               </div>
               <div class="mdl-card__actions mdl-card--border">
                 <a href="contruccion.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Investigar mas</a>
@@ -67,6 +67,21 @@
                 <div class="mdl-cell mdl-cell--12-col">
                         <?php include './plantilla/estadisticas.php' ?>
                 </div>
+              </div>
+            </div>
+            <div class="mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop mdl-color--white">
+              <div class="mdl-grid">
+                <!--ANUNCIO-->
+                    <script type="text/javascript">
+                      ( function() {
+                        if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+                        var unit = {"calltype":"async[2]","publisher":"jhorje18","width":320,"height":50,"sid":"Chitika Default"};
+                        var placement_id = window.CHITIKA.units.length;
+                        window.CHITIKA.units.push(unit);
+                        document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+                    }());
+                    </script>
+                    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
               </div>
             </div>
           </div>
