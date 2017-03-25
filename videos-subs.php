@@ -46,7 +46,7 @@
 
         <div class="mdl-grid demo-content">
           <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
-            Suscribete a estos canales
+            Videos de otros canales
           </center></div>
 
         <?php
