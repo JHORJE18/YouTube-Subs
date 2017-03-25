@@ -108,7 +108,8 @@
                               }   else  {
                                   echo '<a href="nuevoSub.php?canal='.$canalID.'" target="_blank"><div class="mdl-button mdl-js-button mdl-button--accent mdl-js-ripple-effect"><i class="material-icons">arrow_forward</i> Suscribete</div></a>';
                               }
-                          ?>                
+                          ?>  
+                <a href="reportes.php?perfil=<?php echo $usuarioVER ?>"><div class="mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons" style="color: red">report</i>Reportar<i class="material-icons" style="color: red">report</i></div></a>              
             <hr>
                       <!--ANUNCIO-->
                       <script type="text/javascript">

@@ -10,6 +10,11 @@
 
       include './plantilla/cabezera.php';
 
+      //Obten perfil que ya quiere reportar
+      if ($_GET['perfil'] != null){
+        $usuarioREP = $_GET['perfil'];
+      }
+
 
       //Contacto a traves del MAIL
       if (isset($_REQUEST['email']))  {
@@ -69,7 +74,7 @@
                           <label class="mdl-textfield__label" for="email">Tu Email</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                          <input name="usuario" class="mdl-textfield__input" type="text" id="usuario">
+                          <input name="usuario" class="mdl-textfield__input" type="text" id="usuario" value="<?php echo $usuarioREP ?>">
                           <label class="mdl-textfield__label" for="usuario">Usuario que quieres reportar</label>
                         </div>
                         <br>
