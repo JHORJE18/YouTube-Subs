@@ -35,7 +35,7 @@
 ?>
 <tr>
     <td class="mdl-data-table__cell--non-numeric">
-        <a href="perfil.php?user=<?php echo $usuario ?>" target="_blank"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><?php echo $usuario ?></div></a>
+        <a href="perfil.php?user=<?php echo $usuario ?>"><div class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect"><?php echo $usuario ?></div></a>
     </td>    
     <td><?php echo $suscrito ?></td>
     <td><?php echo $subsWEB ?></td>
