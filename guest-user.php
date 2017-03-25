@@ -187,11 +187,11 @@ if ($imagen == null){
                 <h1>Iniciar Sesión</h1>
                 <hr>
                    <form action="usuarios.php" method="post" class="iniciar">
-                      <div class="mdl-textfield mdl-js-textfield">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input name="usuario" class="mdl-textfield__input" type="text" id="usuario">
                         <label class="mdl-textfield__label" for="usuario">Usuario</label>
                       </div>
-                      <div class="mdl-textfield mdl-js-textfield">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input name="password" class="mdl-textfield__input" type="password" id="password">
                         <label class="mdl-textfield__label" for="password">Contraseña</label>
                       </div>
@@ -209,29 +209,29 @@ if ($imagen == null){
                 <hr>
               <form action="usuarios.php" method="post" class="registro">
 
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                     <input name="usuario" class="mdl-textfield__input" type="text" id="usuario">
                     <label class="mdl-textfield__label" for="usuario">Usuario</label>
                 </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                       <input name="email" class="mdl-textfield__input" type="email" id="email">
                       <label class="mdl-textfield__label" for="password">Correo electronico</label>
                 </div>
                 <br>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                     <input name="link" class="mdl-textfield__input" type="text" id="link">
                     <label class="mdl-textfield__label" for="link">Link al canal</label>
                 </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                     <input name="video" class="mdl-textfield__input" type="text" id="video">
                     <label class="mdl-textfield__label" for="video">Un video del canal</label>
                 </div>
                 <br>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                       <input name="password" class="mdl-textfield__input" type="password" id="password">
                       <label class="mdl-textfield__label" for="password">Nueva contraseña</label>
                 </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                       <input name="passwordC" class="mdl-textfield__input" type="password" id="passwordC">
                       <label class="mdl-textfield__label" for="repasswordC">Confirma la contraseña</label>
                 </div>

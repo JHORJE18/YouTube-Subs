@@ -37,11 +37,11 @@
             <span>Comprueba que tus enlaces funcionaran en la plataforma aqui</span>
             <div class="mdl-cell mdl-cell--12-col">
                    <form action="ayuda.php" method="post" class="comprobar">
-                      <div class="mdl-textfield mdl-js-textfield">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                         <input name="canal" class="mdl-textfield__input" type="text" id="canal" value="Ha">
                         <label class="mdl-textfield__label" for="canal">Link al canal</label>
                       </div>
-                      <div class="mdl-textfield mdl-js-textfield">
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
                         <input name="video" class="mdl-textfield__input" type="text" id="video">
                         <label class="mdl-textfield__label" for="video">Link a un vídeo</label>
                       </div>

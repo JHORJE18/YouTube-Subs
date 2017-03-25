@@ -64,16 +64,16 @@
                   <h1>Envia un mensaje</h1>
                   <hr>
                     <form action="contacto.php" method="post" class="mensaje">
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <input name="email" class="mdl-textfield__input" type="text" id="email">
                           <label class="mdl-textfield__label" for="email">Email</label>
                         </div>
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <input name="subject" class="mdl-textfield__input" type="subject" id="subject">
                           <label class="mdl-textfield__label" for="subject">Asunto</label>
                         </div>
                         <br>
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <textarea name="comment" class="mdl-textfield__input" type="text" rows= "5" id="comment" ></textarea>
                           <label class="mdl-textfield__label" for="comment">Mensaje</label>
                         </div>

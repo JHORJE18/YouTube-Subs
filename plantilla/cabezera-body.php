@@ -5,7 +5,7 @@
   <div class="mdl-layout__header-row">
     <span class="mdl-layout-title"><?php echo $seccion; ?></span>
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--expandable">
       <label class="mdl-button mdl-js-button mdl-button--icon" for="buscar">
         <i class="material-icons">search</i>
       </label>

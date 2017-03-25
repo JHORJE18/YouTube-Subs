@@ -142,35 +142,35 @@
 <form action="perfil.php?edit=1" method="post" class="add">
 
     <h3>Editar campos</h3>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="nombre" class="mdl-textfield__input" type="text" id="nombre" value="<?php echo $perfilUser[2] ?>">
         <label class="mdl-textfield__label" for="nombre">Nombre</label>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="apedillo" class="mdl-textfield__input" type="text" id="apedillo" value="<?php echo $perfilUser[3] ?>">
         <label class="mdl-textfield__label" for="apedillo">Apedillos</label>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="foto" class="mdl-textfield__input" type="text" id="foto" value="<?php echo $perfilUser[6] ?>">
         <label class="mdl-textfield__label" for="foto">URL Foto perfil</label>
     </div>
     <hr>
     <h3>Redes Sociales</h3>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="facebook" class="mdl-textfield__input" type="text" id="facebook" value="<?php echo $red[1] ?>">
         <label class="mdl-textfield__label" for="facebook">Perfil Facebook</label>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="twitter" class="mdl-textfield__input" type="text" id="twitter" value="<?php echo $red[2] ?>">
         <label class="mdl-textfield__label" for="twitter">Perfil Twitter</label>
     </div>
     <br>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="instagram" class="mdl-textfield__input" type="text" id="instagram" value="<?php echo $red[3] ?>">
         <label class="mdl-textfield__label" for="instagram">Perfil Instagram</label>
     </div>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
         <input name="youtube" class="mdl-textfield__input" type="text" id="youtube" value="<?php echo $red[4] ?>">
         <label class="mdl-textfield__label" for="youtube">Perfil YouTube</label>
     </div>
