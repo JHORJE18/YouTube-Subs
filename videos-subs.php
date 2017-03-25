@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+
+  <?php
+  include 'conexion.php';
+  include 'seguridad.php';
+
+      //Limito la busqueda
+      $TAMANO_PAGINA = 12;
+
+      //Examino la pagina a mostrar
+      $pagina = $_GET['pag'];
+      if (!$pagina){
+        $inicio = 0;
+        $pagina = 1;
+      } else  {
+        $inicio = ($pagina -1) * $TAMANO_PAGINA;
+      }
+
+      //Miro numero de campos
+      $consultaCAMPOS = "SELECT * FROM usuarios";
+                if ($resultado = $conexion -> query($consultaCAMPOS)){
+                    //Determinamos numero tablas
+                    $num_total_reg = $resultado -> num_rows;
+                }
+      //Calculo total de paginas
+      $total_paginas = ceil($num_total_reg / $TAMANO_PAGINA);
+
+      $seccion = "Videos de la comunidad";
+
+      include './plantilla/cabezera.php';
+      ?>
+
+
+
+    <title>YT Subs | <?php echo $seccion; ?></title>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <?php
+        include './plantilla/cabezera-body.php';
+        include './plantilla/menu-lateral.php';
+       ?>
+      <main class="mdl-layout__content mdl-color--grey-100">
+
+        <div class="mdl-grid demo-content">
+          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
+            Suscribete a estos canales
+          </center></div>
+
+        <?php
+         //Sentencia SQL
+        $criterio = "ORDER BY SUBSCRITO DESC";
+        $maxREG = $inicio + $TAMANO_PAGINA;
+        while ($inicio < $maxREG){
+              $consulta = "SELECT * FROM usuarios ".$criterio." limit ".$inicio.",".$TAMANO_PAGINA;
+              if ($resultado = $conexion -> query($consulta)){
+                    $obj = $resultado->fetch_array();          //Mete los valores en el array $fila[]
+                    if ($obj != null){
+                      //Obtiene los datos
+                      $sesion = $_SESSION['usuario'];
+                      $usuario = $obj[1];
+                      $link = $obj[4];
+                      $subs = $obj[9];
+                      $video = $obj[6];
+                      $fecha = $obj[7];
+
+                        $division = explode("/", $obj[4]);
+                        $canalID = $division[4];
+
+                        $division = explode("=", $obj[6]);
+                        $videoID = end($division);
+                      include './plantilla/carta-video.php';
+                    }
+              }
+              $inicio++;
+        }
+             ?>
+
+          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white">
+            <span>  Pagina</span> <?php
+                      for ($i=1; $i<=$total_paginas; $i++){
+                        //Muestra botones
+                        echo '<a href="./videos-subs.php?pag='.$i.'"><div class="mdl-button mdl-js-button mdl-js-ripple-effect';
+                          if ($i != $pagina){
+                            echo ' mdl-button--accent">'.$i.'</div></a>';
+                          } else {
+                            echo 'mdl-button--raised mdl-button--colored">'.$i.'</div></a>';
+                          }
+                      }
+
+                    ?>
+          </div>
+
+          <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>
+            Videos de otros canales
+          </center></div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
