@@ -58,6 +58,11 @@
               <div class="mdl-cell mdl-cell--12-col mdl-color--white">
                   <h1><i class="material-icons" style="font-size: 50px; color: red">report</i>Reportar un usuario<i class="material-icons" style="font-size: 50px; color: red">report</i></h1>
                   <hr>
+                  <?php 
+                    if ($mensaje != null){
+                        echo '<span>'.$mensaje.'</span><hr>';
+                    }
+                  ?>
                     <form action="reportes.php" method="post" class="mensaje">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <input name="email" class="mdl-textfield__input" type="text" id="email">

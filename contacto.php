@@ -50,6 +50,11 @@
     <div class="mld-grid mdl-cell mdl-cell--12-col">
         <h1>Contacta con el soporte</h1>
         <hr>
+                  <?php 
+                    if ($mensaje != null){
+                        echo '<span>'.$mensaje.'</span><hr>';
+                    }
+                  ?>
         <div id="p" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="width:100%"></div>
             <br>
                 <center>
