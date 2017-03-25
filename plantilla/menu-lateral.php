@@ -50,7 +50,7 @@ include 'conexion.php';
     <a class="mdl-navigation__link" href="suscriptores.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people_outline</i>Suscriptores</a>
     <a class="mdl-navigation__link" href="suscribirse.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Suscribirse</a>
     <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">movie</i>Videos de suscriptores</a>
-    <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Reportes</a>
+    <a class="mdl-navigation__link" href="reportes.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Reportes</a>
     <a class="mdl-navigation__link" href="versiones.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings_backup_restore</i>Versiones</a>
     <a class="mdl-navigation__link" href="contacto.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">contacts</i>Contacto</a>
     <div class="mdl-layout-spacer"></div>

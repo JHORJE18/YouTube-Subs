@@ -27,6 +27,8 @@
       //Calculo total de paginas
       $total_paginas = ceil($num_total_reg / $TAMANO_PAGINA);
 
+      $seccion = "Suscribirse";
+
       include './plantilla/cabezera.php';
       ?>
 
