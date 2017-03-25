@@ -112,6 +112,14 @@ $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
 if ($imagen == null){
     $mensaje = "El link del canal no es valido";
 }   else {
+
+//Vamos a comprobar si el video es valido
+$divisionVideo = explode("/", $_POST['video']);
+$linkVideoFORMATEADO = $divisionVideo[3];
+
+if (substr_count($linkVideoFORMATEADO, "&") != 0){
+    $mensaje = "El link del video no es valido";
+}   else {
     
         //Convertir valores
         $correo = strtolower ( $correo ); //AUTOMATICAMENTE MINUSCULAS
@@ -162,7 +170,8 @@ if ($imagen == null){
                 }
             }
         }
-    }    
+    }  
+}  
         } else {
              $mensaje = "Todos los campos no deben de estar vacios!";
         }

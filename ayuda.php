@@ -7,6 +7,47 @@
 
   $seccion = "Ayuda";
 
+  //Obtiene información enlaces para comprobar
+  if ($_POST['canal'] != null){
+      //Vamos a comprobar si el canal es valido
+        $division = explode("/", $_POST['canal']);
+        $canalID = $division[4];
+
+        $apiG = "SELECT * FROM `GoogleAPI` ORDER BY `GoogleAPI`.`ID` DESC";
+        if ($resultado_API = $conexion -> query($apiG)){
+            $obj = $resultado_API->fetch_array();          //Mete los valores en el array $fila[]
+            $llave = $obj[1];
+        }
+
+        //Intenta obtener la imagen del canal, si no hay imagen, no existe canal
+        $api = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id='.$canalID.'&key='.$llave.'');
+        $resultado = json_decode($api, true);
+        $imagen = ($resultado['items'][0]['snippet']['thumbnails']["high"]['url']);
+
+            if ($imagen != null){
+                //Canal existe, enlace validado 1/2
+                $enlaceCanal = 1;
+            }   else {
+                //Canal no existe o no es valido
+                $enlaceCanal = 2;
+            }
+        }
+
+  if ($_POST['video'] != null){
+      //Vamos a comprobar si el video es valido
+        $division = explode("/", $_POST['video']);
+        $linkVideoFORMATEADO = $division[3];
+
+        if (substr_count($linkVideoFORMATEADO, "&") == 0){
+            //Video valido
+            $enalceVideo = 1;
+        }   else {
+            //Video no valido
+            $enalceVideo = 2;
+        }
+  }
+
+
       include './plantilla/cabezera.php';
       ?>
 
@@ -37,12 +78,41 @@
             <span>Comprueba que tus enlaces funcionaran en la plataforma aqui</span>
             <div class="mdl-cell mdl-cell--12-col">
                    <form action="ayuda.php" method="post" class="comprobar">
+                       <?php 
+                        switch ($enlaceCanal){
+                            case 1:
+                                echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Funciona</button>';
+                                break;
+                            case 2:
+                                echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">No Funciona</button>';
+                                break;
+                            default:
+                                echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Enlace vacio</button>';
+                                break;
+                        }
+                        echo '&nbsp;';
+                       ?>
                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
-                        <input name="canal" class="mdl-textfield__input" type="text" id="canal" value="Ha">
+                        <input name="canal" class="mdl-textfield__input" type="text" id="canal" value="<?php echo $_POST['canal'] ?>">
                         <label class="mdl-textfield__label" for="canal">Link al canal</label>
                       </div>
-                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
-                        <input name="video" class="mdl-textfield__input" type="text" id="video">
+                      <br>
+                       <?php 
+                        switch ($enalceVideo){
+                            case 1:
+                                echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Funciona</button>';
+                                break;
+                            case 2:
+                                echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">No Funciona</button>';
+                                break;
+                            default:
+                                echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Enlace vacio</button>';
+                                break;
+                        }
+                        echo '&nbsp;';
+                       ?>                      
+                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--floating-label">
+                        <input name="video" class="mdl-textfield__input" type="text" id="video" value="<?php echo $_POST['video'] ?>">
                         <label class="mdl-textfield__label" for="video">Link a un vídeo</label>
                       </div>
                     <div><input type="submit" name="comprobar" value="Comprobar enlaces" class="mdl-button mdl-js-button mdl-button--colored"></div>
@@ -94,8 +164,16 @@
                 $buscaMAL = '%&%';
                 $videosMALOS = "SELECT * FROM `usuarios` WHERE VIDEO LIKE '$buscaMAL'";
                     if ($resultado = $conexion -> query($videosMALOS)){
-                        $linkVideos = $resultado -> num_rows;          //Mete los valores en el array $fila[]
+                        $linkVY = $resultado -> num_rows;          //Mete los valores en el array $fila[]
                     }
+
+                $buscaMAL = '%=%';
+                $videosMALOS = "SELECT * FROM `usuarios` WHERE VIDEO NOT LIKE '$buscaMAL'";
+                    if ($resultado = $conexion -> query($videosMALOS)){
+                        $linkVIG = $resultado -> num_rows;          //Mete los valores en el array $fila[]
+                    }
+
+            $linkVideos = $linkVY + $linkVIG;
 
             //Si no obtiene resultados es que no hay enalces de canales mal
             if ($linkVideos == 0){
