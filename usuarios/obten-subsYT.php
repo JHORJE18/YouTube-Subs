@@ -1,9 +1,7 @@
 <?php
 
 //Sacamos canal ID
-$division = explode("/", $link);
-
-$canalID = $division[4];
+$canalID = $link;
 
 //Obten ultima clave para API Google
     $apiG = "SELECT * FROM `GoogleAPI` ORDER BY `GoogleAPI`.`ID` DESC";

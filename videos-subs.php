@@ -66,8 +66,7 @@
                       $video = $obj[6];
                       $fecha = $obj[7];
 
-                        $division = explode("/", $obj[4]);
-                        $canalID = $division[4];
+                        $canalID = $obj[4];
 
                         $division = explode("=", $obj[6]);
                         $videoID = end($division);

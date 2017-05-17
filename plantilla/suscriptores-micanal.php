@@ -19,9 +19,7 @@ $consultaUSER = "SELECT * FROM usuarios WHERE USUARIO= '$sesion'";
                  $user = $resultadoUSER->fetch_array();          //Mete los valores en el array $user[]
 
 //Sacamos canal ID
-        $division = explode("/", $user[4]);
-
-        $canalID = $division[4];
+        $canalID = $user[4];
 
 //Tabla de canales, obten el numero de resultados a mostrar en $numRESULT  
     $campos = "SELECT * FROM subscripcion WHERE `USER-USER`= '$canalID'";

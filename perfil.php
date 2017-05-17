@@ -31,8 +31,7 @@
               }
 
         //Sacamos canal ID
-        $division = explode("/", $perfilUser[4]);
-        $canalID = $division[4];
+        $canalID = $perfilUser[4];
 
         //Comprueba si estas suscrito
             $sesion = $_SESSION['usuario'];
