@@ -9,7 +9,7 @@ include 'conexion.php';
         $linkID = $_GET['canal'];
 
         //Consultar si el canal destino esta en la BBDD
-            $linkBBDD = "https://www.youtube.com/channel/".$linkID;
+            $linkBBDD = $linkID;
             $consultaP = "SELECT * FROM usuarios WHERE LINK='$linkBBDD'";
             if ($resultado = $conexion -> query($consultaP)){
                 //Determinamos numero tablas
