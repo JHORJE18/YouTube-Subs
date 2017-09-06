@@ -128,7 +128,7 @@
     <hr>
     <div>
         <input type="submit" name="editar" value="editar" id="editar" class="mdl-button mdl-js-button mdl-button--colored">
-        <input type="submit" name="borrar" value="Borrar perfil" id="borrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        <input type="reset" name="borrar" value="Borrar perfil" id="borrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
     </div><br>
 </form>
 
