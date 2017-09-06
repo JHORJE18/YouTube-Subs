@@ -25,6 +25,7 @@
         </center></div>
 
         <?php
+            include './plantilla/ADMIN/barra.php';
             include './plantilla/ADMIN/general.php';
         ?>
 
