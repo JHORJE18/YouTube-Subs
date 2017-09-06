@@ -4,6 +4,7 @@
 
   <?php
   include 'conexion.php';
+  $permiso = 1;
   include 'seguridad.php';
 
   $seccion = "Reportar";
@@ -17,8 +18,22 @@
 
 
       //Contacto a traves del MAIL
-      if (isset($_REQUEST['email']))  {
-        
+      if (isset($_REQUEST['email']) && isset($_REQUEST['usuario']) && isset($_REQUEST['comment']))  {
+
+        //Reporte
+        $userRep = $_REQUEST['usuario'];
+        $userAutor = $_SESSION['usuario'];
+        $fecha = date("Y-m-d");
+        $nota = $_REQUEST['comment'];
+
+        $NewReporte = "INSERT INTO `reportes` (`ID`, `USER-REP`, `USER-AUTOR`, `FECHA`, `NOTA`, `SI`, `NO`, `ESTADO`) VALUES (null,'$userRep','$userAutor','$fecha','$nota','0','0','1')";
+          if ($resultado = $conexion->query($NewReporte)){
+            $mensaje = "Has reportado al usuario ".$userRep;
+          } else {
+            $mensaje = "Se ha producido un error al reportar al usuario ".$userRep .'<br>'.$NewReporte;
+          }
+
+    /*    TEMP DESACTIVADO
         //Email information
         $admin_email = "wiijlg@hotmail.com";
         $email = $_REQUEST['email'];
@@ -36,6 +51,10 @@
         
         //Mensaje
         $mensaje = "Has reportado al usuario ".$_REQUEST['usuario'];
+
+        */
+      } else {
+        $mensaje = "No he recibido lo que esperaba";
       }
 
       ?>
@@ -68,7 +87,7 @@
                         echo '<span>'.$mensaje.'</span><hr>';
                     }
                   ?>
-                    <form action="reportes.php" method="post" class="mensaje">
+                    <form action="reportes.php"  method="post" class="mensaje">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                           <input name="email" class="mdl-textfield__input" type="text" id="email">
                           <label class="mdl-textfield__label" for="email">Tu Email</label>
