@@ -25,8 +25,17 @@
         </center></div>
 
         <?php
-            include './plantilla/ADMIN/barra.php';
-            include './plantilla/ADMIN/general.php';
+          include './plantilla/ADMIN/barra.php';
+
+          switch ($_GET['ver']){
+            case 'USER':
+              include './plantilla/ADMIN/usuario.php';
+              break;
+            default:
+              include './plantilla/ADMIN/general.php';
+              break;
+          }
+
         ?>
 
         <div class="mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-button mdl-button--raised mdl-button--colored"><center>

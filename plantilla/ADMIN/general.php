@@ -20,7 +20,7 @@
                         for ($i=0; $i<$numRep; $i++){
                             $mostrarREP = $consultNR. " LIMIT ". $i . " , 1";
                             if ($resulta = $conexion -> query($mostrarREP)){
-                                $obj = $resulta->fetch_array();
+                                $card = $resulta->fetch_array();
 
                                 include './plantilla/ADMIN/reporteCARD.php';
                             }
