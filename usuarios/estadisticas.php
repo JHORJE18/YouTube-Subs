@@ -28,7 +28,7 @@
             <span>Suscripciones conseguidas:</span>
         </span>
         <span class="mdl-list__item-secondary-content">
-            <strong><?php echo $perfilUser[]9® ?></strong>
+            <strong><?php echo $perfilUser[9] ?></strong>
         </span>
     </li>
     <li class="mdl-list__item">
