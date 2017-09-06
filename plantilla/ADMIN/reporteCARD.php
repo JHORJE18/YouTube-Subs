@@ -9,6 +9,7 @@
 
             <div class="mdl-cell mdl-cell--10-col">
                 <p><?php echo $card[4] ?></p>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">PENDIENTE</button></span>
             </div>
 
             <div class="mdl-cell mdl-cell--2-col">
