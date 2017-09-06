@@ -70,9 +70,15 @@
             <a href="suscriptores.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people_outline</i>suscriptores</div></a>
             <a href="suscribirse.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">people</i>Suscribirse</div></a>
             <a href="videos-subs.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">movie</i>Videos de suscriptores</div></a>
-            <?php if ($usuarioVER == $_SESSION['usuario']) {
-            echo '<a href="perfil.php?edit=1"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">edit</i>Editar Perfil</div></a>';
-            } ?>
+            <?php 
+            if ($usuarioVER == $_SESSION['usuario']) {
+              echo '<a href="perfil.php?edit=1"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"><i class="material-icons">edit</i>Editar Perfil</div></a>';
+            } 
+            if ($perfilUser[10] >= 4){
+              echo '<a href="admin.php"><div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">security</i>Administración</div></a>
+';
+            }
+            ?>
           </div>
 
           <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
